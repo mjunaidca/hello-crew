@@ -6,11 +6,11 @@ from pydantic import BaseModel
 from crewai.flow import Flow, listen, start
 
 from hello.crews.poem_crew.poem_crew import PoemCrew
-
+from typing import Optional
 
 class PoemState(BaseModel):
-    sentence_count: int = 1
-    poem: str = ""
+    sentence_count: Optional[int] = 1
+    poem: Optional[str] = ""
 
 
 class PoemFlow(Flow[PoemState]):
